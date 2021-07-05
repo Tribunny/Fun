@@ -2,7 +2,7 @@
 
 [task_local]
 #湘创生活
-0 9 * * * https://raw.githubusercontent.com/xl2101200/-/main/xcsh.js, tag=湘创生活
+0 9 * * * https://raw.githubusercontent.com/Tribunny/Fun/main/xcsh.js, tag=湘创生活
 '''
 
 
