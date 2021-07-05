@@ -1,9 +1,12 @@
-'''
+"""
+下载湘创生活，抓取header中的Authorization复制全部参数
+添加环境变量
+export XCSHXK="第一个账号&第二个账号&···"
 
 [task_local]
 #湘创生活
-0 9 * * * https://raw.githubusercontent.com/Tribunny/Fun/main/xcsh.js, tag=湘创生活
-'''
+0 9 * * * https://raw.githubusercontent.com/Tribunny/Fun/main/xcsh.py, tag=湘创生活
+"""
 
 
 import requests
@@ -24,9 +27,9 @@ url = "https://api.csxcsh.com/api/sign/integral"
 
 # ac读取环境变量
 if "XCSHCK" in os.environ:
-    xmly_speed_cookie = os.environ["XCSHCK"]
+    xcsh_speed_cookie = os.environ["XCSHCK"]
     cookiesList = []  # 重置cookiesList
-    for v in xmly_speed_cookie.split('&'):
+    for v in xcsh_speed_cookie.split('&'):
         if not v:
             continue
         cookiesList.append(v)
