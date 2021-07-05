@@ -8,7 +8,7 @@ SSO-SESSION-ID=xxxxx; UFO-SESSION-ID=xxxxx;
 
 [task_local]
 #联动云
-0 9 * * * https://raw.githubusercontent.com/Tribunny/Fun/main/ldygo.py, tag=联动云
+0 9 * * * https://raw.githubusercontent.com/Tribunny/Fun/main/ldygo.py, tag=联动云, enabled=true
 """
 
 

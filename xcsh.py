@@ -5,7 +5,7 @@ export XCSHXK="第一个账号&第二个账号&···"
 
 [task_local]
 #湘创生活
-0 9 * * * https://raw.githubusercontent.com/Tribunny/Fun/main/xcsh.py, tag=湘创生活
+0 9 * * * https://raw.githubusercontent.com/Tribunny/Fun/main/xcsh.py, tag=湘创生活, enabled=true
 """
 
 
