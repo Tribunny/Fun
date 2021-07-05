@@ -14,7 +14,7 @@ from time import *
 
 bg_time = time()
 
-cookies1 = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEzMDQ5NTAsInNjb3BlIjo4LCJleHAiOjE2NTU4Njc1ODIsImlhdCI6MTYyNDMzMTU4Mn0.nMlHYTO9XHIvmO2nbbQJU1jPoCtur2h4CDwp4yxxJaA"
+cookies1 = ""
 
 cookies2 = ""
 
