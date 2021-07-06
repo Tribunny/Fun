@@ -40,6 +40,7 @@ def main():
     for i in range(cklen):
         print(f"=====第{i+1}个账号开始签到=====")
         sign(cookiesList[i])
+        getUserInfo(cookiesList[i])
         if i != cklen-1:
             sleep(2)
         print(f"=====第{i+1}个账号签到结束=====")
