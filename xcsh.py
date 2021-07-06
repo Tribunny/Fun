@@ -23,8 +23,6 @@ cookies2 = ""
 
 cookiesList = [cookies1, ]   # 多账号准备
 
-url = "https://api.csxcsh.com/api/sign/integral"
-
 # ac读取环境变量
 if "XCSHCK" in os.environ:
     xcsh_speed_cookie = os.environ["XCSHCK"]
@@ -52,6 +50,7 @@ def main():
 
 
 def sign(cookie):
+    url = "https://api.csxcsh.com/api/sign/integral"
     header = {
         "log-header": "I am the log request header.",
         "Authorization": cookie,
@@ -65,6 +64,27 @@ def sign(cookie):
         res = requests.post(url, headers=header, timeout=1000)
         res = json.loads(res.text)
         print(res['msg'], res['time'])
+    except requests.exceptions.ConnectionError:
+        print("连接错误,请检查网络！")
+
+
+def getUserInfo(cookie):
+    url = "https://api.csxcsh.com/api/userinfo"
+    header = {
+        "log-header": "I am the log request header.",
+        "Authorization": cookie,
+        "Content-Length": "0",
+        "Connection": "keep-alive",
+        "Host": "api.csxcsh.com",
+        "Accept-Encoding": "gzip",
+        "User-Agent": "okhttp/3.12.6"
+    }
+    try:
+        res = requests.post(url, headers=header, timeout=1000)
+        res = json.loads(res.text)
+        con = str(res['data']['userAsset']['currentContribution'])
+        re = str(res['data']['userAsset']['currentRedEnvelope'])
+        print(f"当前贡献值：{con}，红包余额：{re}元")
     except requests.exceptions.ConnectionError:
         print("连接错误,请检查网络！")
 
