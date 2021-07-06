@@ -81,11 +81,11 @@ def getUserInfo(cookie):
         "User-Agent": "okhttp/3.12.6"
     }
     try:
-        res = requests.post(url, headers=header, timeout=1000)
+        res = requests.get(url, headers=header, timeout=1000)
         res = json.loads(res.text)
         con = str(res['data']['userAsset']['currentContribution'])
         re = str(res['data']['userAsset']['currentRedEnvelope'])
-        print(f"当前贡献值：{con}，红包余额：{re}元")
+        print(f"当前贡献值：{con}，红包余额：{re}元。")
     except requests.exceptions.ConnectionError:
         print("连接错误,请检查网络！")
 
